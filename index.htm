@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="assets/calculator-solid.svg" type="image/x-icon">
     <title>CGPA Calculator</title>
 </head>
 <body>
@@ -21,7 +22,12 @@
         <section class="semester semester-1">
             <div class="header">
                 <h1 class="main-heading">Semester 1</h1>
-                <div class="add-icon"></div>
+                <div class="add-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                      </svg>
+                      
+                </div>
             </div>
             <form action="#" name="Semester-1">
                 <table>
@@ -59,6 +65,12 @@
                                     </select>
                                 </label>
                             </td>
+                            <td>  
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cancel">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                  
+                            </td>
                         </tr>
                          <!--Course two-->
                         <tr>
@@ -86,6 +98,12 @@
                                     </select>
                                 </label>
                             </td>
+                            <td>  
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cancel">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                  
+                            </td>
                         </tr>
                          <!--Course three-->
                         <tr>
@@ -111,6 +129,12 @@
                                         <option value="0">F</option>
                                     </select>
                                 </label>
+                            </td>
+                            <td>  
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cancel">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                  
                             </td>
                         </tr>
                     </tbody>
@@ -123,7 +147,11 @@
         <section class="semester semester-2">
             <div class="header">
                 <h1 class="main-heading">Semester 2</h1>
-                <div class="add-icon"></div>
+                <div class="add-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                      </svg>
+                </div>
             </div>
             <form action="#" name="Semester-1">
                 <table>
@@ -160,6 +188,12 @@
                                     </select>
                                 </label>
                             </td>
+                            <td>  
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cancel">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                  
+                            </td>
                         </tr>
                          <!--Course two-->
                         <tr>
@@ -186,6 +220,12 @@
                                     </select>
                                 </label>
                             </td>
+                            <td>  
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cancel">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                  
+                            </td>
                         </tr>
                          <!--Course three-->
                         <tr>
@@ -211,6 +251,12 @@
                                         <option value="0">F</option>
                                     </select>
                                 </label>
+                            </td>
+                            <td>  
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cancel">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                  
                             </td>
                         </tr>
                     </tbody>
@@ -225,7 +271,7 @@
        <section class="outputs">
         <h2 class="heading">REPORT</h2>
         <div class="gpa">
-            <h3 sub-heading>Semester 1</h3>
+            <h3 class='sub-heading'>Semester 1</h3>
             <ul>
                 <li>
                     <h4>Weight:</h4>
@@ -242,7 +288,7 @@
             </ul>
         </div>
         <div class="gpa">
-            <h3 sub-heading>Semester 2</h3>
+            <h3 class='sub-heading'>Semester 2</h3>
             <ul>
                 <li>
                     <h4>Weight:</h4>
@@ -259,10 +305,22 @@
             </ul>
         </div>
         <div class="cgpa">
-            <p class="report">Your Cumulative Grade Point Average (CGPA) is : <span> 0.00</span>. Class of grade: <span> NIL</span></p>
+            <p class="report">Your Cumulative Grade Point Average (CGPA) is : <span> 0.00</span> 
+            </p>
+            <p class="report"> Class of grade: <span> NIL</span>
+                </p>
+        </div>
+        <div class="footer">
+            <button class="add-semester">
+                RESET
+            </button>
+            <button class="add-semester">
+                CALCULATE
+            </button>
         </div>
        </section>
     </div>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
