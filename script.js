@@ -202,7 +202,7 @@ cancel.forEach(function(each){
     container.insertBefore(newSemester,addSemester)
  })
 
- function addSemester(count,container_1,container_2,element_1,element_2){
+ function add(count,container_1,container_2,elementOne,elementTwo){
     let content_1 = `<h3 class='sub-heading'>Semester ${count}{</h3>
     <ul>
         <li>
@@ -337,8 +337,8 @@ cancel.forEach(function(each){
     </table>
 </form>`
 
-let element_1 = document.create(element_1);
-let element_2 = document.create(element_2);
+let element__1 = document.create(elementOne);
+let element__2 = document.create(elementTwo);
 
 element__1.innerHTML = content_1;
 element__2.innerHTML = content_2;
