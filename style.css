@@ -169,16 +169,13 @@ tbody tr:hover .cancel{
     font-style: oblique;
 }
 
-button{
-    all:unset;
-}
-
 .heading{
     text-align: center;
     padding-top: 20px;
 }
 
-.add-semester{
+button{
+    all:unset;
     padding:7px 10px;
     background-color: gray;
     width:fit-content;
