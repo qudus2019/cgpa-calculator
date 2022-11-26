@@ -1,0 +1,102 @@
+
+:root{
+
+}
+
+/*General styles*/
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: helvetica;
+}
+
+span{
+    font-size: 24px;
+    font-family: monospace;
+    color:green;
+}
+
+li{
+    display:flex;
+    align-items: center;
+    gap:20px;
+}
+
+thead tr{
+    color:silver;
+    text-align: left;
+}
+
+body{
+    background-color: aliceblue;
+}
+
+header{
+    padding:20px;
+}
+
+header h1,
+header p{
+    text-align: center;
+}
+
+header h1{
+    font-family: monospace;
+}
+
+header p{
+    font-style: italic;
+}
+
+.container{
+    width:1000px;
+    max-width:90vw;
+    padding:20px 20px 40px;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:20px;
+}
+
+/*INPUT SECTION*/
+
+.inputs{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+.header{
+    display:flex;
+}
+
+.main-heading{
+    color:gray;
+    padding:10px 0;
+}
+
+.course{
+    width:100px;
+}
+
+.course:focus{
+    outline:none;
+}
+
+input,
+select{
+    padding: 4px 5px;
+    border:0;
+    border-radius:5px;
+}
+
+table{
+    border-spacing:13px;
+}
+
+table{
+background-color:rgba(5, 249, 249, 0.246);
+}
+
+
+
+
