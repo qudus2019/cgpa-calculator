@@ -7,11 +7,12 @@ let outputs  = document.querySelector('.outputs');
  const inputs = document.querySelector('.inputs');
 
 //add course functionality
-    container.addEventListener('click',function(e){
+    document.addEventListener('click',function(e){
         //add course functionality
-      if(e.target.classList.contains('add-icon') || e.target.tagName == 'SVG'){
-        console.log('clicked')
-let semester = e.target.parentElement.parentElement;
+        console.log('clicked the document')
+      if(e.target.classList.contains('icon')){
+        console.log('clicked the icon')
+let semester = e.target.parentElement.parentElement.parentElement;
 console.log(semester)
 let tableBody = semester.querySelector('tbody');
 console.log(tableBody);
@@ -50,6 +51,8 @@ newCourse.innerHTML = `<td>
 count++
 
 tableBody.appendChild(newCourse);
+}else{
+    console.log('Not clicked!')
 }
 });
 
@@ -97,7 +100,7 @@ tableBody.appendChild(newCourse);
     let content_2 = `<div class="header">
     <h1 class="main-heading">Semester ${count}</h1>
     <div class="add-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
           </svg>
     </div>
@@ -225,7 +228,9 @@ element_2.innerHTML = content_2;
 container_1.insertBefore(element_1,document.querySelector('.cgpa'));
 container_2.insertBefore(element_2, addSemester);
 
-
-
-
  }
+
+ //reset button functionality
+ document.querySelector('.reset').addEventListener('click',(e)=>{
+    document.location.reload(true);
+ })
