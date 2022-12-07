@@ -5,11 +5,14 @@ let addSemester = document.querySelector('.add-semester');
 let outputs  = document.querySelector('.outputs');
  let container = document.querySelector('.container');
  const inputs = document.querySelector('.inputs');
+ let calculateButton = document.querySelector('#calculate');
+ let allUnitsSum = 0;
+ let allWeightsSum = 0;
 
 //add course functionality
     document.addEventListener('click',function(e){
         //add course functionality
-        console.log('clicked the document')
+        //console.log('clicked the document')
       if(e.target.classList.contains('icon')){
         console.log('clicked the icon')
 let semester = e.target.parentElement.parentElement.parentElement;
@@ -52,7 +55,7 @@ count++
 
 tableBody.appendChild(newCourse);
 }else{
-    console.log('Not clicked!')
+    //console.log('Not clicked!')
 }
 });
 
@@ -234,3 +237,63 @@ container_2.insertBefore(element_2, addSemester);
  document.querySelector('.reset').addEventListener('click',(e)=>{
     document.location.reload(true);
  })
+
+//calculate functionality
+ calculateButton.addEventListener('click', function(e){
+    //calculate();
+   console.log(document.querySelectorAll('form'))
+   document.querySelectorAll('form').forEach((semester,ind)=>{
+    semester.querySelectorAll('tbody tr').forEach((course,index)=>{
+         let unit = +(course.querySelector('.unit').value);
+        
+         let selectGrade = course.querySelector('select');
+        // console.log(selectGrade , grades)
+         let selectedGrade = +(selectGrade.value);
+         console.log(typeof(selectedGrade)) 
+         let weight = calcWeight(selectedGrade,unit);
+         console.log(typeof(weight))
+         allUnitsSum += unit;
+         allWeightsSum += weight;
+         console.log(allWeightsSum, allUnitsSum)
+
+
+         console.log(`The unit for semester ${ind+1} course ${index + 1} is ${unit} and grade is ${selectedGrade} and weight is ${weight}`);
+         
+        
+    })
+})
+//console.log(`Total weights = ${allWeightsSum}, Total units = ${allUnitsSum} and CGPA = ${allWeightsSum/allUnitsSum}`)
+let cgpa = allWeightsSum / allUnitsSum;
+updateCGPA(cgpa.toFixed(2));
+ })
+
+ function calcWeight(grade,unit){
+    return grade * unit 
+ };
+
+ function updateCGPA(CGPA){
+   let cgpaOutput =  document.querySelector('.cgpa-output');
+   cgpaOutput.textContent = CGPA;
+
+    let gradeClass = classOfGrade(CGPA);
+
+    document.querySelector('.grade-class').textContent = gradeClass;
+ }
+
+ function classOfGrade(cgpa){
+    if(cgpa < 1.50){
+        return 'PASS'
+    }else if(cgpa >= 1.50 && cgpa <= 2.48){
+        return 'Third class'
+    }else if(cgpa >=2.49 && cgpa <=3.49){
+        return 'Second class lower'
+    }else if(cgpa >=3.50 && cgpa <=4.49){
+        return 'Second class upper'
+    }else if(cgpa >= 4.50 && cgpa <= 5.00){
+        return 'First class'
+    }else {
+        return "NIL"
+    }
+ }
+
+ 
