@@ -241,6 +241,8 @@ container_2.insertBefore(element_2, addSemester);
 //calculate functionality
  calculateButton.addEventListener('click', function(e){
     //calculate();
+ allUnitsSum = 0;
+  allWeightsSum = 0;
    console.log(document.querySelectorAll('form'))
    document.querySelectorAll('form').forEach((semester,ind)=>{
     semester.querySelectorAll('tbody tr').forEach((course,index)=>{
@@ -292,7 +294,7 @@ updateCGPA(cgpa.toFixed(2));
     }else if(cgpa >= 4.50 && cgpa <= 5.00){
         return 'First class'
     }else {
-        return "NIL"
+        return "FAIL"
     }
  }
 
