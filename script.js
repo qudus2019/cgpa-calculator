@@ -284,7 +284,7 @@ updateCGPA(cgpa.toFixed(2));
 
  function classOfGrade(cgpa){
     if(cgpa < 1.50){
-        return 'PASS'
+        return 'FAIL'
     }else if(cgpa >= 1.50 && cgpa <= 2.48){
         return 'Third class'
     }else if(cgpa >=2.49 && cgpa <=3.49){
