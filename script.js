@@ -241,6 +241,8 @@ container_2.insertBefore(element_2, addSemester);
 //calculate functionality
  calculateButton.addEventListener('click', function(e){
     //calculate();
+ allUnitsSum = 0;
+  allWeightsSum = 0;
     allUnitsSum = 0;
     allWeightsSum = 0;
    //console.log(document.querySelectorAll('form'))
@@ -311,7 +313,7 @@ updateCGPA(cgpa.toFixed(2));
 
  function classOfGrade(cgpa){
     if(cgpa < 1.50){
-        return 'PASS'
+        return 'FAIL'
     }else if(cgpa >= 1.50 && cgpa <= 2.48){
         return 'Third class'
     }else if(cgpa >=2.49 && cgpa <=3.49){
@@ -321,7 +323,7 @@ updateCGPA(cgpa.toFixed(2));
     }else if(cgpa >= 4.50 && cgpa <= 5.00){
         return 'First class'
     }else {
-        return "NIL"
+        return "FAIL"
     }
  }
 
