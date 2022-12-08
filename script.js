@@ -72,13 +72,13 @@ tableBody.appendChild(newCourse);
  //add a semester
  addSemester.addEventListener('click',function(e){
     
-    console.log(count)
+    //console.log(count)
 
     let newSection = 'section';
     let div = 'div';
     add(count,outputs,inputs,div, newSection);
     count++;
-    console.log(count)
+    //console.log(count)
  })
 
  //function that adds a semester in inputs section and report section
@@ -86,19 +86,19 @@ tableBody.appendChild(newCourse);
     
     let content_1 = `<h3 class='sub-heading'>Semester ${count}</h3>
     <ul>
-        <li>
-            <h4>Weight:</h4>
-            <span class="output">00</span>
-        </li>
-        <li>
-            <h4>Total Units:</h4>
-            <span class="output">00</span>
-        </li>
-        <li>
-            <h4>GPA:</h4>
-            <span class="output">0.00</span>
-        </li>
-    </ul>`
+                <li>
+                    <h4>Weight:</h4>
+                    <span class="output" id="semester-weight-${count}">00</span>
+                </li>
+                <li>
+                    <h4>Total Units:</h4>
+                    <span class="output" id="semester-unit-${count}">00</span>
+                </li>
+                <li>
+                    <h4>GPA:</h4>
+                    <span class="output" id="semester-gpa-${count}">0.00</span>
+                </li>
+            </ul>`
 
     let content_2 = `<div class="header">
     <h1 class="main-heading">Semester ${count}</h1>
@@ -241,27 +241,56 @@ container_2.insertBefore(element_2, addSemester);
 //calculate functionality
  calculateButton.addEventListener('click', function(e){
     //calculate();
-   console.log(document.querySelectorAll('form'))
-   document.querySelectorAll('form').forEach((semester,ind)=>{
+    allUnitsSum = 0;
+    allWeightsSum = 0;
+   //console.log(document.querySelectorAll('form'))
+   document.querySelectorAll('form').forEach((semester , ind)=>{
+    let semesterWeight = 0;
+    let semesterUnit = 0;
+     //get weight container, unit container and gpa container for each semester in the report section
+     let count = document.querySelectorAll('.semester').length; //number of current semesters
+     
     semester.querySelectorAll('tbody tr').forEach((course,index)=>{
+        
          let unit = +(course.querySelector('.unit').value);
         
          let selectGrade = course.querySelector('select');
         // console.log(selectGrade , grades)
          let selectedGrade = +(selectGrade.value);
-         console.log(typeof(selectedGrade)) 
+         //console.log(typeof(selectedGrade)) 
          let weight = calcWeight(selectedGrade,unit);
-         console.log(typeof(weight))
-         allUnitsSum += unit;
-         allWeightsSum += weight;
-         console.log(allWeightsSum, allUnitsSum)
+         //console.log(typeof(weight))
+         semesterWeight += weight;
+        semesterUnit += unit;    
 
-
-         console.log(`The unit for semester ${ind+1} course ${index + 1} is ${unit} and grade is ${selectedGrade} and weight is ${weight}`);
-         
+        //updateGpa()
         
+         //console.log(`The unit for semester ${ind+1} course ${index + 1} is ${unit} and grade is ${selectedGrade} and weight is ${weight}`);
+
     })
+
+    console.log(`Semester ${ind + 1} weight is ${semesterWeight} weights and unit is ${semesterUnit} units`);
+        allUnitsSum += semesterUnit;
+         allWeightsSum += semesterWeight;
+         //console.log(typeof(semesterWeight), typeof(semesterUnit))
+         //console.log(allWeightsSum,allUnitsSum);
+         count++; //next semester
+    let weight_container = document.querySelector(`#semester-weight-${ind + 1}`);
+    let unit_container = document.querySelector(`#semester-unit-${ind + 1}`);
+    let gpa_container = document.querySelector(`#semester-gpa-${ind + 1}`);
+
+    weight_container.textContent = semesterWeight.toFixed(2);
+    unit_container.textContent = semesterUnit.toFixed(2);
+         console.log(weight_container, unit_container, gpa_container);
+         let gpa = +(semesterWeight / semesterUnit);
+
+         gpa_container.textContent = gpa.toFixed(2);
+
+
 })
+
+
+
 //console.log(`Total weights = ${allWeightsSum}, Total units = ${allUnitsSum} and CGPA = ${allWeightsSum/allUnitsSum}`)
 let cgpa = allWeightsSum / allUnitsSum;
 updateCGPA(cgpa.toFixed(2));
@@ -296,4 +325,3 @@ updateCGPA(cgpa.toFixed(2));
     }
  }
 
- 

@@ -14,6 +14,14 @@
         <p>With this 5-point calculator</p>
     </header>
     <main>
+        <ol class="instruction">
+            <li>Input all units and select grade. Course code is not compulsory</li>
+            <li>Clear out all input fields not used to prevent error.</li>
+            <li>Click the calculate button</li>
+            <li>Report display the total weight, total unit and gpa for each semester, and CGPA and grade class</li>
+            <li>NOTE: No data is saved.</li>
+
+        </ol>
         <!--Container-->
     <div class="container">
         <!--Inputs section-->
@@ -273,15 +281,15 @@
             <ul>
                 <li>
                     <h4>Weight:</h4>
-                    <span class="output">00</span>
+                    <span class="output" id="semester-weight-1">00</span>
                 </li>
                 <li>
                     <h4>Total Units:</h4>
-                    <span class="output">00</span>
+                    <span class="output" id="semester-unit-1">00</span>
                 </li>
                 <li>
                     <h4>GPA:</h4>
-                    <span class="output">0.00</span>
+                    <span class="output" id="semester-gpa-1">0.00</span>
                 </li>
             </ul>
         </div>
@@ -290,15 +298,15 @@
             <ul>
                 <li>
                     <h4>Weight:</h4>
-                    <span class="output">00</span>
+                    <span class="output" id="semester-weight-2">00</span>
                 </li>
                 <li>
                     <h4>Total Units:</h4>
-                    <span class="output">00</span>
+                    <span class="output" id="semester-unit-2">00</span>
                 </li>
                 <li>
                     <h4>GPA:</h4>
-                    <span class="output">0.00</span>
+                    <span class="output" id="semester-gpa-2">0.00</span>
                 </li>
             </ul>
         </div>
@@ -319,6 +327,9 @@
        </section>
     </div>
     </main>
+    <footer>
+        &copy; Abdul Sanusi
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
